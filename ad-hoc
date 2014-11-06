@@ -1,0 +1,9 @@
+#!/bin/bash
+#starts the ad hoc server
+sudo ip link set wlp3s0 down
+sudo iwconfig wlp3s0 mode ad-hoc
+sudo iwconfig wlp3s0 channel 4
+sudo iwconfig wlp3s0 essid 'ad-hoc'
+sudo ip addr add 10.0.0.1 dev wlp3s0
+sudo ip link set wlp3s0 up
+sudo ip route add default via 10.0.0.1
