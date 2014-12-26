@@ -1,0 +1,4 @@
+#!/bin/bash
+#parse json data from bitstamp
+jq .last -r tf.json
+curl -s https://www.bitstamp.net/api/ticker/ > tf.json
