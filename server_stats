@@ -1,0 +1,9 @@
+#!/bin/bash
+echo " vnstat -d" > /srv/http/bandwidth.txt
+vnstat -d | grep -v estimated >> /srv/http/bandwidth.txt
+echo "" >> /srv/http/bandwidth.txt
+echo " vnstat -m" >> /srv/http/bandwidth.txt
+vnstat -m | grep -v estimated >> /srv/http/bandwidth.txt
+uptime > /srv/http/uptime.txt
+free -m > /srv/http/memory.txt
+df -h --total > /srv/http/ssd.txt
